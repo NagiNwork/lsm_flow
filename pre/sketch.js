@@ -7,9 +7,9 @@ let frame_x,frame_y;
 // Load.
 function preload() {
 		// select image name
-    img = loadImage('gray_ver.jpg');
+    img = loadImage('../images/gray_ver.jpg');
 		//Select make_lsm_grayimg.py execution result
-    coe = loadStrings('data.txt');
+    coe = loadStrings('../data.txt');
 }
 
 function setup(){
@@ -25,17 +25,17 @@ function setup(){
     text('Color1', img.width + 2 * frame_x + 10, 10);
     textSize(10);
     text('🔴', img.width + 2 * frame_x + 10, 22.5);
-    r_slider1 = createSlider(0, 255, 200);
+    r_slider1 = createSlider(0, 255, 230);
     r_slider1.position(img.width + 2 * frame_x + 30, 10);
 
     textSize(10);
     text('🟢', img.width + 2 * frame_x + 10, 42.5);
-    g_slider1 = createSlider(0, 255, 200);
+    g_slider1 = createSlider(0, 255, 230);
     g_slider1.position(img.width + 2 * frame_x + 30, 30);
 
     textSize(10);
     text('🔵', img.width + 2 * frame_x + 10, 62.5);
-    b_slider1 = createSlider(0, 255, 200);
+    b_slider1 = createSlider(0, 255, 230);
     b_slider1.position(img.width + 2 * frame_x + 30, 50);
 
     //2
@@ -44,17 +44,17 @@ function setup(){
     
     textSize(10);
     text('🔴', img.width + 2 * frame_x + 10, 102.5);
-    r_slider2 = createSlider(0, 255, 200);
+    r_slider2 = createSlider(0, 255, 230);
     r_slider2.position(img.width + 2 * frame_x + 30, 90);
 
     textSize(10);
     text('🟢', img.width + 2 * frame_x + 10, 122.5);
-    g_slider2 = createSlider(0, 255, 200);
+    g_slider2 = createSlider(0, 255, 230);
     g_slider2.position(img.width + 2 * frame_x + 30, 110);
 
     textSize(10);
     text('🔵', img.width + 2 * frame_x + 10, 142.5);
-    b_slider2 = createSlider(0, 255, 200);
+    b_slider2 = createSlider(0, 255, 230);
     b_slider2.position(img.width + 2 * frame_x + 30, 130);
 
     //3
@@ -63,17 +63,17 @@ function setup(){
 
     textSize(10);
     text('🔴', img.width + 2 * frame_x + 10, 182.5);
-    r_slider3 = createSlider(0,255, 200);
+    r_slider3 = createSlider(0,255, 230);
     r_slider3.position(img.width + 2 * frame_x + 30, 170);
 
     textSize(10);
     text('🟢', img.width + 2 * frame_x + 10, 202.5);
-    g_slider3 = createSlider(0, 255, 200);
+    g_slider3 = createSlider(0, 255, 230);
     g_slider3.position(img.width + 2 * frame_x + 30, 190);
 
     textSize(10);
     text('🔵', img.width + 2 * frame_x + 10, 222.5);
-    b_slider3 = createSlider(0, 255, 200);
+    b_slider3 = createSlider(0, 255, 230);
     b_slider3.position(img.width + 2 * frame_x + 30, 210);
 
     //relocation circle button
