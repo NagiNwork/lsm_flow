@@ -3,6 +3,7 @@ let coe;
 //frame_x : height of the frame
 //frame_y : width of the frame
 let frame_x,frame_y;
+let input;
 
 // Load.
 function preload() {
@@ -16,8 +17,8 @@ function setup(){
     createCanvas(1000, 1000);
     background(200);
     noStroke();
-    frame_x = img.width / 5;
-    frame_y = img.height / 5;
+    frame_x = 5 / (4 * 2.828) * img.height - (img.width / 2);
+    frame_y = img.height / 8;
 
     //select color
     //1
@@ -78,13 +79,18 @@ function setup(){
 
     //relocation circle button
     let button = createButton('generate');
-    button.position(img.width + 2 * frame_x + 20, 250);
+    button.position(img.width + 2 * frame_x + 20, 280);
     button.mousePressed(gen_img);
 
     //save image button
     let save_button = createButton('save image');
-    save_button.position(img.width + 2 * frame_x + 20, 280);
+    save_button.position(img.width + 2 * frame_x + 20, 310);
     save_button.mousePressed(save_image);
+
+    //input text
+    input = createInput('');
+    input.position(img.width + 2 * frame_x + 20, 250);
+    input.input(gen_img);
 
     gen_img();
 }
@@ -93,6 +99,7 @@ function setup(){
 function gen_img(){
     draw_frame();
     draw_cir();
+    typo();
 }
 
 //Draw a circle following the least squares method.
@@ -133,13 +140,28 @@ function draw_cir(){
 
 //draw frame
 function draw_frame(){
-    fill(255);
+    fill(250);
     beginShape();
         vertex(0, 0);
         vertex(img.width + 2 * frame_x, 0);
         vertex(img.width + 2 * frame_x, img.height + 2 * frame_y);
         vertex(0, img.height + 2 * frame_y)
     endShape(CLOSE);
+}
+
+function typo(){
+    let size = 12;
+    let title = input.value();
+    fill(0);
+    textStyle(BOLD);
+    textSize(size * 6);
+    textAlign(LEFT, CENTER);
+    text(title,size * 3,frame_y);
+    
+    textStyle(NORMAL);
+    textSize(size);
+    textAlign(RIGHT, TOP);
+    text(year()+"."+month() + "." + day(), img.width + frame_x,size + frame_y + img.height);
 }
 
 //save result image
